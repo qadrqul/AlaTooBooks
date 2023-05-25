@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head th:fragment="head(title)">
+    <title>Ala-Too Books</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="fonts\icomoon\style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+    <link href="css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+<div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+        <div class="site-mobile-menu-header">
+            <div class="site-mobile-menu-close mt-3">
+                <span class="icon-close2 js-menu-toggle"></span>
+            </div>
+        </div>
+        <div class="site-mobile-menu-body"></div>
+    </div>
+
+
+    <div th:fragment="bar" class="py-2 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9 d-none d-lg-block">
+                    <a>Supported by</a>
+                    <a> </a>
+                    <a href="http://alatoo.edu.kg"><img width="38" height="38" style="margin-left: 4px" src="https://ocs.alatoo.edu.kg/pluginfile.php/1/core_admin/logo/0x200/1679882010/Logo.png"></a>
+<!--                    <a><img src="images/logo.jpg" alt="academics"></a>-->
+
+                </div>
+                <div class="col-lg-3 text-right">
+                    <a href="login" sec:authorize="isAnonymous()" class="small mr-3"><span class="icon-unlock-alt"></span> Log In</a>
+                    <a href="/logout" sec:authorize="isAuthenticated()" class="small mr-3"><span class="icon-unlock-alt"></span> Log out</a>
+                    <a href="register" sec:authorize="isAnonymous()" class="small btn btn-primary px-4 py-2 rounded-0"><span class="icon-users"></span> Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <header th:fragment="header"  id="tm-header"  class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <div class="site-logo">
+                    <a href="/" class="d-block">
+                        <img src="images/logo.png" alt="Image" class="img-fluid">
+                    </a>
+                </div>
+                <div class="mr-auto">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
+                            <li class="active">
+                                <a href="/" class="nav-link text-left">Home</a>
+                            </li>
+                            <li>
+                                <a href="users" sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link text-left">Users</a>
+                            </li>
+                            <li>
+                                <a href="addBook" sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link text-left">Add Book</a>
+                            </li>
+                            <li>
+                                <a href="adduser" sec:authorize="hasRole('ROLE_ADMIN')" class="nav-link text-left">Add User</a>
+                            </li>
+                            <li>
+                                <a href="aboutus"  sec:authorize="hasRole('ROLE_USER')" class="nav-link text-left">About Us</a>
+                                <a href="aboutus"  sec:authorize="isAnonymous()" class="nav-link text-left">About Us</a>
+                            </li>
+                            <li>
+                                <a href="books" class="nav-link text-left">Books</a>
+                            </li>
+                            <li>
+                                <a href="cart" sec:authorize="hasRole('ROLE_USER')" class="nav-link text-left">Cart</a>
+
+                                <a href="cart" sec:authorize="isAnonymous()" class="nav-link text-left">Cart</a>
+                            </li>
+                        </ul>                                                                                                                                                                                                                                                                                          </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <div class="footer" th:fragment="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <p class="mb-4"><img src="images/logo.png" alt="Image" class="img-fluid"></p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nemo minima qui dolor, iusto iure.</p>
+                    <p><a href="#">Learn More</a></p>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="footer-heading"><span>Our Campus</span></h3>
+                    <ul class="list-unstyled">
+                        <li><a href="http://alatoo.edu.kg/">Ala-Too</a></li>
+                        <li><a href="https://academics-production.up.railway.app/">Academics</a></li>
+                        <li><a href="#">Books</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="footer-heading"><span>Our Books</span></h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Math</a></li>
+                        <li><a href="#">Science &amp; Engineering</a></li>
+                        <li><a href="#">Arts &amp; Humanities</a></li>
+                        <li><a href="#">Economics &amp; Finance</a></li>
+                        <li><a href="#">Business Administration</a></li>
+                        <li><a href="#">Computer Science</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h3 class="footer-heading"><span>Contact</span></h3>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="https://github.com/umetbekoff">Support Community</a></li>
+                        <li><a href="#">Telegram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="copyright">
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>document.write(new Date().getFullYear());</script>"ALA-TOO BOOKS" All rights reserved</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="hero-slide owl-carousel site-blocks-cover">
+        <div class="intro-section" style="background-image: url('static/images/hero_1.jpg');">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
+                        <h1>Ala-Too University</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="intro-section" style="background-image: url('static/images/hero_1.jpg');">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 mx-auto text-center" data-aos="fade-up">
+                        <h1>You Can Find Any Book</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- .site-wrap -->
+
+
+<!-- loader -->
+<div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#51be78"/></svg></div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/aos.js"></script>
+<script src="js/jquery.fancybox.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/jquery.mb.YTPlayer.min.js"></script>
+
+
+
+
+<script src="js/main.js"></script>
+
+</body>
+
+</html>
